@@ -1,15 +1,14 @@
 #This Terraform Code Deploys Basic VPC Infra.
 provider "aws" {
-  # access_key = var.aws_access_key
-  # secret_key = var.aws_secret_key
   region = var.aws_region
 }
 
 terraform {
   backend "s3" {
-    bucket = "terramasteringprani"
-    key    = "workspace-statefile"
-    region = "us-east-1"
+    bucket         = "pranitraningterra1100111222999000"
+    key            = "workspace-statefile"
+    region         = "us-east-1"
+    dynamodb_table = "dynamodb-state-locking"
   }
 }
 
